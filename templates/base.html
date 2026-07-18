@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Portfolio{% endblock %} - Jude Joby Joseph</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <a href="{{ url_for('home') }}" class="logo">JUDE.</a>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a href="{{ url_for('home') }}" class="nav-link {% if request.endpoint == 'home' %}active{% endif %}">
+                    <i class="fas fa-home" style="margin-right: 10px;"></i> Home
+                </a></li>
+                <li><a href="{{ url_for('projects') }}" class="nav-link {% if request.endpoint == 'projects' %}active{% endif %}">
+                    <i class="fas fa-layer-group" style="margin-right: 10px;"></i> Projects
+                </a></li>
+                <li><a href="{{ url_for('about') }}" class="nav-link {% if request.endpoint == 'about' %}active{% endif %}">
+                    <i class="fas fa-user" style="margin-right: 10px;"></i> About
+                </a></li>
+                <li><a href="{{ url_for('contact') }}" class="nav-link {% if request.endpoint == 'contact' %}active{% endif %}">
+                    <i class="fas fa-envelope" style="margin-right: 10px;"></i> Contact
+                </a></li>
+            </ul>
+        </nav>
+        <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+
+    <main class="main-content">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <div class="flash-messages">
+            {% for category, message in messages %}
+            <div class="flash-message {{ category }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+    </main>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>

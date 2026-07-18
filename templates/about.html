@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="section-header text-center">
+    <h1 class="page-title">The Story Behind the <span>Code</span></h1>
+    <p class="page-subtitle">From breaking systems to building smarter ones.</p>
+</div>
+
+<div class="about-grid">
+    <div class="about-text">
+        <p>
+            I'm <strong>Jude Joby Joseph</strong> — an MCA graduate and Full-Stack Developer with a solid grounding in Machine Learning, Cloud Computing, and Linux systems.
+        </p>
+        <p>
+            My path into tech began with a curiosity for cybersecurity — figuring out how systems break, and what it actually takes to make them harder to break. That curiosity pulled me toward building software that's secure and intelligent by design, not as an afterthought.
+        </p>
+        <p>
+            One project I'm especially proud of is a decentralized mesh network for disaster communication — designed to keep communication alive when traditional infrastructure like cell towers and the internet go down. It's the kind of problem that sits right at the intersection of networking, systems design, and real-world impact, and it's shaped a lot of how I think about building resilient software.
+        </p>
+        <p>
+            Alongside that, my focus has shifted toward research in automated diagnostics. I co-authored "Thyroid Disease Prediction" using XGBoost, published in the International Journal of Science, Engineering and Technology — work that sits at the intersection of machine learning and real-world healthcare impact.
+        </p>
+        <p>
+            I'm also drawn to systems-level challenges like building a secure remote code execution engine — the kind of problems that are hard, meaningful, and worth getting right.
+        </p>
+        <p style="margin-top: 2rem; padding: 1.5rem; background: rgba(0, 240, 255, 0.05); border-left: 4px solid var(--accent-cyan); border-radius: 0 8px 8px 0; color: var(--text-primary); font-weight: 500;">
+            Right now, I'm looking for opportunities in IT Support, Systems Administration, or as a Software/AI Trainee — and I'm always open to freelance projects if you've got something interesting to build.
+        </p>
+        
+        <h3 style="margin-top: 3rem; margin-bottom: 1.5rem; font-family: var(--font-display); font-size: 1.8rem;">Technical Arsenal</h3>
+        
+        <div style="margin-bottom: 1rem;">
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.5rem; font-weight: 500;">Core dev</p>
+            <div class="skills-wrapper" style="margin-top: 0;">
+                <div class="skill-pill"><span class="skill-icon">🐍</span> <span class="skill-name" style="margin-left: 0.5rem;">Python</span></div>
+                <div class="skill-pill"><span class="skill-icon">🎸</span> <span class="skill-name" style="margin-left: 0.5rem;">Django</span></div>
+                <div class="skill-pill"><span class="skill-icon">🔌</span> <span class="skill-name" style="margin-left: 0.5rem;">REST APIs</span></div>
+                <div class="skill-pill"><span class="skill-icon">🗄️</span> <span class="skill-name" style="margin-left: 0.5rem;">SQL</span></div>
+            </div>
+        </div>
+
+        <div style="margin-bottom: 1rem;">
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.5rem; font-weight: 500;">Systems</p>
+            <div class="skills-wrapper" style="margin-top: 0;">
+                <div class="skill-pill"><span class="skill-icon">🐧</span> <span class="skill-name" style="margin-left: 0.5rem;">Linux</span></div>
+                <div class="skill-pill"><span class="skill-icon">⚙️</span> <span class="skill-name" style="margin-left: 0.5rem;">C</span></div>
+                <div class="skill-pill"><span class="skill-icon">⌨️</span> <span class="skill-name" style="margin-left: 0.5rem;">Bash</span></div>
+                <div class="skill-pill"><span class="skill-icon">🐳</span> <span class="skill-name" style="margin-left: 0.5rem;">Docker</span></div>
+            </div>
+        </div>
+
+        <div style="margin-bottom: 1rem;">
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.5rem; font-weight: 500;">The differentiators</p>
+            <div class="skills-wrapper" style="margin-top: 0;">
+                <div class="skill-pill"><span class="skill-icon">🛡️</span> <span class="skill-name" style="margin-left: 0.5rem;">Cybersecurity</span></div>
+                <div class="skill-pill"><span class="skill-icon">🧠</span> <span class="skill-name" style="margin-left: 0.5rem;">Machine Learning</span></div>
+                <div class="skill-pill"><span class="skill-icon">🌐</span> <span class="skill-name" style="margin-left: 0.5rem;">Networking</span></div>
+            </div>
+        </div>
+
+        <div>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.5rem; font-weight: 500;">Cloud & Tools</p>
+            <div class="skills-wrapper" style="margin-top: 0;">
+                <div class="skill-pill"><span class="skill-icon">☁️</span> <span class="skill-name" style="margin-left: 0.5rem;">Cloud Computing</span></div>
+                <div class="skill-pill"><span class="skill-icon">📦</span> <span class="skill-name" style="margin-left: 0.5rem;">Git</span></div>
+                <div class="skill-pill"><span class="skill-icon">🚀</span> <span class="skill-name" style="margin-left: 0.5rem;">XGBoost</span></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="about-visual" style="display: flex; align-items: center; justify-content: center; position: relative;">
+        <div style="position: absolute; width: 300px; height: 300px; background: radial-gradient(circle, rgba(0, 240, 255, 0.2) 0%, transparent 70%); border-radius: 50%; z-index: -1;"></div>
+        <img src="{{ url_for('static', filename='images/3d_image_me.png') }}" alt="Jude Joby Joseph" style="max-width: 100%; border-radius: 20px; border: 1px solid var(--glass-border); filter: grayscale(20%); transition: var(--transition-base);" onmouseover="this.style.filter='grayscale(0%)'; this.style.transform='scale(1.05)'" onmouseout="this.style.filter='grayscale(20%)'; this.style.transform='scale(1)'">
+    </div>
+</div>
+
+<div class="certifications-section">
+    <h2 style="font-family: var(--font-display); font-size: 2.2rem; margin-bottom: 2rem; text-align: center;">Certifications & Achievements</h2>
+    <div class="cert-grid">
+        {% for cert in certifications %}
+        <div class="cert-card">
+            <div class="cert-icon">{{ cert.icon }}</div>
+            <h3 class="cert-title">{{ cert.name }}</h3>
+            <div class="cert-issuer">{{ cert.issuer }}</div>
+            <div class="cert-date" style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">{{ cert.date }}</div>
+            {% if cert.link %}
+            <a href="{{ cert.link }}" target="_blank" class="project-link">
+                View Credentials <i class="fas fa-arrow-right"></i>
+            </a>
+            {% endif %}
+        </div>
+        {% endfor %}
+        
+        <div class="cert-card">
+            <div class="cert-icon">📄</div>
+            <h3 class="cert-title">Research Publication</h3>
+            <div class="cert-issuer">IJSET (March 2026)</div>
+            <div class="cert-date" style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">Thyroid Disease Prediction using XGBoost</div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="section-header text-center">
+    <h1 class="page-title">Get in <span>Touch</span></h1>
+    <p class="page-subtitle">Have a project in mind or just want to say hi? I'd love to hear from you.</p>
+</div>
+
+<div class="contact-container mx-auto" style="margin: 0 auto; position: relative;">
+    <!-- Hidden iframe to prevent redirect -->
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="handleFormSubmit()"></iframe>
+    
+    <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdGynMWQ84_yicRLutl5KJ6-ElbmG4ALU3O8duZUAAxkGqzjA/formResponse" method="POST" target="hidden_iframe" id="contact-form" class="contact-form" onsubmit="submitted=true;">
+        <div class="form-group">
+            <input type="text" name="entry.42301537" id="name" class="form-input" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+            <input type="email" name="entry.582375610" id="email" class="form-input" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+            <textarea name="entry.1449838792" id="message" class="form-input" placeholder="Your Message" required></textarea>
+        </div>
+        <div style="text-align: right;">
+            <button type="submit" class="btn btn-primary">
+                Send Message <i class="fas fa-paper-plane" style="margin-left: 8px;"></i>
+            </button>
+        </div>
+    </form>
+
+    <!-- Custom Success Modal -->
+    <div id="success-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); backdrop-filter: blur(5px); z-index: 2000; align-items: center; justify-content: center;">
+        <div style="background: var(--glass-bg); border: 1px solid var(--accent-cyan); padding: 3rem; border-radius: 20px; text-align: center; max-width: 400px; box-shadow: 0 20px 40px rgba(0, 240, 255, 0.2);">
+            <i class="fas fa-paper-plane" style="font-size: 3rem; color: var(--accent-cyan); margin-bottom: 1.5rem;"></i>
+            <h3 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 1rem;">Message sent!</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem;">Got it! Thanks for reaching out. I'll get back to you as soon as I can.</p>
+            <button onclick="closeModal()" class="btn btn-primary" style="padding: 0.8rem 2rem;">Awesome</button>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var submitted = false;
+        function handleFormSubmit() {
+            if (submitted) {
+                // Show modal
+                var modal = document.getElementById('success-modal');
+                modal.style.display = 'flex';
+                // Reset form
+                document.getElementById('contact-form').reset();
+                submitted = false;
+            }
+        }
+        function closeModal() {
+            document.getElementById('success-modal').style.display = 'none';
+        }
+    </script>
+    
+    <div style="text-align: center; margin-top: 4rem;">
+        <p style="color: var(--text-secondary); margin-bottom: 1rem;">Or connect with me directly on social media:</p>
+        <div class="hero-socials" style="justify-content: center;">
+            <a href="https://www.linkedin.com/in/judejobyjoseph/" target="_blank" class="social-icon" title="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://twitter.com/lordwitch777" target="_blank" class="social-icon" title="Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://instagram.com/jude._.joby._.joseph" target="_blank" class="social-icon" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-content">
+        <h1 class="hero-title">
+            Hey, I'm <br>
+            <span class="highlight">Jude Joby Joseph</span>
+        </h1>
+        
+        <div style="display: inline-block; background: rgba(0, 255, 136, 0.1); border: 1px solid rgba(0, 255, 136, 0.3); padding: 0.5rem 1rem; border-radius: 50px; margin-bottom: 1.5rem;">
+            <span style="color: #00ff88; font-weight: 600; font-size: 0.95rem;">🟢 Open to Work</span>
+            <span style="color: var(--text-secondary); margin-left: 0.5rem; font-size: 0.9rem;">IT Support · Systems Admin · AI/Software Trainee</span>
+        </div>
+
+        <p class="hero-subtitle" style="color: var(--accent-cyan); font-weight: 500; font-size: 1.8rem; margin-bottom: 1rem;">Building Intelligent Systems, One Line at a Time</p>
+        <p class="hero-subtitle" style="font-size: 1.2rem; margin-bottom: 3.5rem;">MCA Graduate • AI/ML Researcher • Full-Stack Developer<br>I turn complex problems into secure, scalable, and elegant software.</p>
+        
+        <div class="hero-actions">
+            <a href="{{ url_for('projects') }}" class="btn btn-primary">
+                <i class="fas fa-compass"></i> Explore My Work
+            </a>
+            <a href="{{ url_for('contact') }}" class="btn btn-secondary">
+                <i class="fas fa-paper-plane"></i> Let's Talk
+            </a>
+        </div>
+        
+        <div class="resume-buttons">
+            <a href="https://drive.google.com/file/d/101szC-V3gQzjIK0S5j2hb31U82HZnGZt/view?usp=sharing" target="_blank" class="btn-resume">
+                <i class="fas fa-file-pdf"></i> Resume_IN
+            </a>
+            <a href="https://drive.google.com/file/d/1utQCReJFv75knSEUPStpy1WEoPlDDhwv/view?usp=sharing" target="_blank" class="btn-resume">
+                <i class="fas fa-file-pdf"></i> Resume_AE
+            </a>
+        </div>
+
+        <div class="hero-socials" style="margin-top: 3rem;">
+            <a href="https://github.com/judejjj" target="_blank" class="social-icon" title="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/judejobyjoseph/" target="_blank" class="social-icon" title="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://twitter.com/lordwitch777" target="_blank" class="social-icon" title="Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </div>
+    </div>
+    
+    <div class="hero-visual-container">
+        <!-- We are using the existing 3d_image_me.png as a placeholder until the user uploads their new cartoonish AI image -->
+        <img src="{{ url_for('static', filename='images/3d_image_me.png') }}" alt="Jude Joby Joseph Cartoonish AI" class="hero-image">
+    </div>
+</section>
+{% endblock %}
